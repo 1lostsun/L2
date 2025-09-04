@@ -1,0 +1,10 @@
+alice	10
+bob	2
+charlie	15
+dave	2
+Mar	5
+Jan	3
+Feb	7
+10K
+2M
+3G

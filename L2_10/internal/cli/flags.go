@@ -8,6 +8,9 @@ type Options struct {
 	Reverse      bool
 	Unique       bool
 	IgnoreTrails bool
+	Months       bool
+	Checked      bool
+	Human        bool
 	Filename     string
 }
 
@@ -17,6 +20,9 @@ func ParseFlags() Options {
 	r := flag.Bool("r", false, "Reverse order")
 	u := flag.Bool("u", false, "Unique order")
 	b := flag.Bool("b", false, "Ignore trails")
+	M := flag.Bool("M", false, "Months order")
+	c := flag.Bool("c", false, "Checked order")
+	h := flag.Bool("h", false, "Human readable order")
 
 	flag.Parse()
 	var filename string
@@ -30,6 +36,9 @@ func ParseFlags() Options {
 		Reverse:      *r,
 		Unique:       *u,
 		IgnoreTrails: *b,
+		Months:       *M,
+		Checked:      *c,
+		Human:        *h,
 		Filename:     filename,
 	}
 }
