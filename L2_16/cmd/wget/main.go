@@ -1,0 +1,4 @@
+package wget
+
+func main() {
+}
