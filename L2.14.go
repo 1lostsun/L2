@@ -1,24 +1,34 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"reflect"
 	"time"
 )
 
 func main() {
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+
 	start := time.Now()
-	sig1 := sig(1 * time.Second)
+	sig1 := sig(10 * time.Second)
 	sig2 := sig(2 * time.Second)
 	sig3 := sig(3 * time.Second)
 	orCh := or(sig1, sig2, sig3)
 
-	go func() {
-		<-orCh
-		fmt.Println("or channel closed because of one input chan was closed")
-	}()
+	go func(ctx context.Context) {
+		select {
+		case <-ctx.Done():
+			return
+		case <-orCh:
+			fmt.Println("or channel closed because of one input chan was closed")
+			cancel()
+		}
+	}(ctx)
 
-	time.Sleep(2 * time.Second)
+	<-ctx.Done()
+
 	fmt.Printf("done after:%v", time.Since(start))
 }
 
