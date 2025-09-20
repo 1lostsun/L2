@@ -7,9 +7,9 @@ import (
 )
 
 type Flags struct {
-	host    string
-	port    int
-	timeout time.Duration
+	Host    string
+	Port    int
+	Timeout time.Duration
 }
 
 func ParseFlags() *Flags {
@@ -24,8 +24,8 @@ func ParseFlags() *Flags {
 	}
 
 	return &Flags{
-		host:    *host,
-		port:    *port,
-		timeout: *timeout,
+		Host:    *host,
+		Port:    *port,
+		Timeout: *timeout,
 	}
 }

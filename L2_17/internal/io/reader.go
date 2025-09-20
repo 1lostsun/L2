@@ -2,13 +2,17 @@ package io
 
 import (
 	"bufio"
-	"os"
+	"fmt"
+	"net"
 )
 
-func ReadLine() {
-	scanner := bufio.NewScanner(os.Stdin)
-}
+func Reader(conn net.Conn, done chan struct{}) error {
+	scanner := bufio.NewScanner(conn)
 
-func readStdin() {
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
 
+	close(done)
+	return scanner.Err()
 }
