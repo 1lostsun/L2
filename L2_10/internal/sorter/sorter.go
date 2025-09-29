@@ -6,6 +6,7 @@ import (
 	"sort"
 )
 
+// SortLines : Функция сортировки строк
 func SortLines(lines []string, opt cli.Options) []string {
 	cmp := makeComparator(opt)
 	sort.SliceStable(lines, func(i, j int) bool {
@@ -25,6 +26,7 @@ func SortLines(lines []string, opt cli.Options) []string {
 	return lines
 }
 
+// IsSorted : Проверка на отсортированность
 func IsSorted(lines []string, opt cli.Options) bool {
 	cmp := makeComparator(opt)
 	for i := 1; i < len(lines); i++ {
@@ -35,6 +37,7 @@ func IsSorted(lines []string, opt cli.Options) bool {
 	return true
 }
 
+// Debug : Функция для дебага
 func Debug(lines []string) {
 	for _, line := range lines {
 		fmt.Println(line)

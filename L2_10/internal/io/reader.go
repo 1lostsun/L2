@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// OpenInput : Функция открытия переданного файла для чтения
 func OpenInput(filename string) (*os.File, error) {
 	if filename != "" {
 		return os.Open(filename)
@@ -13,6 +14,7 @@ func OpenInput(filename string) (*os.File, error) {
 	return os.Stdin, nil
 }
 
+// ReadLines : Чтение построчно из файла
 func ReadLines(f *os.File) ([]string, error) {
 	scanner := bufio.NewScanner(f)
 	var lines []string

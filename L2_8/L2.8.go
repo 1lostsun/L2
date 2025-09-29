@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/1lostsun/L2/L2.8/ntp_utils"
 	"log"
 	"os"
 )

@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Cut : выбирает указанные поля из строки по разделителю.
 func Cut(line string, opts cli.Options) string {
 	if opts.Separated && !strings.Contains(line, opts.Delimiter) {
 		return ""

@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Echo : Функция для вывода строк в консоль эквивалетная линукс команде echo
 func Echo(args []string) {
 	newline := true
 	escape := false

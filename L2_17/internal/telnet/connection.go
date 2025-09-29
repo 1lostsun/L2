@@ -6,6 +6,7 @@ import (
 	"net"
 )
 
+// Connect : Функция установки соединения
 func Connect(flags *cli.Flags) (net.Conn, error) {
 	addr := fmt.Sprintf("%s:%d", flags.Host, flags.Port)
 	conn, err := net.DialTimeout("tcp", addr, flags.Timeout)

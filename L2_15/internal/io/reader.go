@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Reader : Функция чтения команд из консоли и добавления их в очередь
 func Reader() (*deque.Deque[[]string], error) {
 	deq := newDeque[[]string]()
 	var split []string

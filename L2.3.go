@@ -14,13 +14,13 @@ import (
 // Но если нам требуется узнать является ли значение переменной nil'ом, то в данном случае подойдет запись ->
 // -> reflect.ValueOf(err).IsNil()
 
-func Foo() error {
+func foo() error {
 	var err *os.PathError = nil
 	return err
 }
 
 func main() {
-	err := Foo()
+	err := foo()
 	fmt.Println(err)
 	fmt.Println(err == nil)
 }

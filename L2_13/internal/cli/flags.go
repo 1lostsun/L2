@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// Options : Структура флагов
 type Options struct {
 	Delimiter string // -d
 	Fields    []int  // -f
@@ -13,6 +14,7 @@ type Options struct {
 	Filename  string
 }
 
+// ParseFlags : Функция парсинга флагов
 func ParseFlags() Options {
 	var delimiter, fields string
 	var separated bool
@@ -30,6 +32,7 @@ func ParseFlags() Options {
 	return opts
 }
 
+// ParseList : преобразует строку с числами и диапазонами в список целых чисел
 func ParseList(s string) []int {
 	var res []int
 	for _, part := range strings.Split(s, ",") {

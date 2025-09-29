@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// ReadLines : Функция чтения строк из STDIN, либо из переданного файла
 func ReadLines(filename string) ([]string, error) {
 	if filename == "" {
 		return readFromStdin()

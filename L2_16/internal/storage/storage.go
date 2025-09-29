@@ -9,10 +9,12 @@ import (
 	"strings"
 )
 
+// Storage : Структура для хранения результата краулинга
 type Storage struct {
 	baseDir string
 }
 
+// NewStorageOnDesktop : Конструктор для хранилища, по умолчанию сохраняет все в папку на рабочем столе
 func NewStorageOnDesktop(folderName string) *Storage {
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
@@ -23,6 +25,7 @@ func NewStorageOnDesktop(folderName string) *Storage {
 	return &Storage{baseDir: desktopDir}
 }
 
+// Save : Функция создания и сохранения папки с результатами краулинга
 func (s *Storage) Save(pageURL string, content []byte) error {
 	fileName := urlToFilename(pageURL)
 	fullPath := filepath.Join(s.baseDir, fileName)
@@ -82,6 +85,7 @@ func urlToFilename(pageURL string) string {
 	return filepath.Join(pathParts...)
 }
 
+// GetBaseDir : Функция получения директории, куда сохраняются результаты
 func (s *Storage) GetBaseDir() string {
 	return s.baseDir
 }

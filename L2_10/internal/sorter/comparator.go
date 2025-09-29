@@ -29,6 +29,7 @@ func getKey(s string, col int, ignoreTrails bool) string {
 	return s
 }
 
+// ParseHuman преобразует строку с суффиксами размеров (K, M, G) в число байт.
 func ParseHuman(s string) (int64, bool) {
 	s = strings.TrimSpace(s)
 	if len(s) == 0 {

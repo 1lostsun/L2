@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// Pwd : Функция возвращает текущую директорию
 func Pwd() (string, error) {
 	currentDir, CurrentDirErr := os.Getwd()
 	if CurrentDirErr != nil {

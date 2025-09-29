@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// ReadLines : Функция чтения строк из STDIN
 func ReadLines(filename string) ([]string, error) {
 	var file *os.File
 	var fileOpenErr error

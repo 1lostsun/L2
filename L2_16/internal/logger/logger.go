@@ -6,12 +6,15 @@ import (
 	"strings"
 )
 
+// Logger : Структура логгера
 type Logger struct{}
 
+// New : Конструктор структуры логгера
 func New() *Logger {
 	return &Logger{}
 }
 
+// Log : Функция логгирования
 func (logger *Logger) Log(newLine bool, message ...string) {
 	msg := strings.Join(message, " ")
 	Color := color.New(color.FgHiWhite).Add(color.Bold)

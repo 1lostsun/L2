@@ -6,12 +6,14 @@ import (
 	"time"
 )
 
+// Flags : Структура флагов
 type Flags struct {
 	Host    string
 	Port    int
 	Timeout time.Duration
 }
 
+// ParseFlags : Парсинг флагов
 func ParseFlags() *Flags {
 	host := flag.String("host", "", "server host")
 	port := flag.Int("port", 0, "server port")

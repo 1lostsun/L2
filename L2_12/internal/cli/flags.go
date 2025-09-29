@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// Options : Структура флагов и настроек
 type Options struct {
 	Pattern    string
 	Filename   string
@@ -19,6 +20,7 @@ type Options struct {
 	LineNumber bool // -n
 }
 
+// ParseFlags : Функция парсинга флагов
 func ParseFlags() Options {
 	var opt Options
 	flag.IntVar(&opt.After, "A", 0, "Number of lines to print")

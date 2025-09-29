@@ -29,7 +29,7 @@ func main() {
 		maxDepth = 2
 	}
 
-	cr := Crawler.NewCrawler("crawler_downloads", maxDepth)
+	cr := crawler.NewCrawler("crawler_downloads", maxDepth)
 	Logger.Log(true, "files will downloads in: ", cr.GetBaseDir())
 
 	err := cr.Crawl(url)

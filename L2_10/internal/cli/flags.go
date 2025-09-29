@@ -2,6 +2,7 @@ package cli
 
 import "flag"
 
+// Options : Структура флагов и настроек
 type Options struct {
 	Column       int
 	Numeric      bool
@@ -14,6 +15,7 @@ type Options struct {
 	Filename     string
 }
 
+// ParseFlags : Функция парсинга флагов
 func ParseFlags() Options {
 	k := flag.Int("k", 0, "Number of columns to generate")
 	n := flag.Bool("n", false, "Number of rows to generate")

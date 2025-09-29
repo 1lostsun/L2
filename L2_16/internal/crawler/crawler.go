@@ -1,4 +1,4 @@
-package Crawler
+package crawler
 
 import (
 	"fmt"
@@ -7,6 +7,7 @@ import (
 	"github.com/1lostsun/L2/tree/main/L2_16/internal/storage"
 )
 
+// Crawler : Структура кравлера веб страниц
 type Crawler struct {
 	*fetcher.Fetcher
 	*storage.Storage
@@ -15,6 +16,7 @@ type Crawler struct {
 	maxDepth int
 }
 
+// NewCrawler : Конструктор кравлера
 func NewCrawler(folderName string, maxDepth int) *Crawler {
 	return &Crawler{
 		Fetcher:  fetcher.NewFetcher(),
@@ -25,6 +27,7 @@ func NewCrawler(folderName string, maxDepth int) *Crawler {
 	}
 }
 
+// Crawl : Вызов функции краулинга, начиная с переданного URL
 func (c *Crawler) Crawl(url string) error {
 	return c.crawlRecursively(url, 0)
 }

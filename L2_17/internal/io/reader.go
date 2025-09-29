@@ -6,6 +6,7 @@ import (
 	"net"
 )
 
+// Reader : Функция чтения строк
 func Reader(conn net.Conn, done chan struct{}) error {
 	scanner := bufio.NewScanner(conn)
 

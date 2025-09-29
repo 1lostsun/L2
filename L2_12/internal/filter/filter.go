@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+// Apply : фильтрует строки по заданным опциям, имитируя поведение grep.
 func Apply(lines []string, opt cli.Options) []string {
 	var result []string
 	toPrint := make(map[int]bool)

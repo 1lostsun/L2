@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Executor : выполняет команды из очереди и обрабатывает их результат.
 func Executor(deq *deque.Deque[[]string]) {
 	deq.IterPopFront()(func(args []string) bool {
 		cmd := strings.ToLower(args[0])

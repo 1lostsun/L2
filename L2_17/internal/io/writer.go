@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// Writer : Функция записи строк в connection
 func Writer(conn net.Conn, done chan struct{}) error {
 	scanner := bufio.NewScanner(os.Stdin)
 

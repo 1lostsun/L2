@@ -6,12 +6,15 @@ import (
 	"strings"
 )
 
+// Parser : Структура парсера
 type Parser struct{}
 
+// NewParser : Конструктор парсера
 func NewParser() *Parser {
 	return &Parser{}
 }
 
+// ExtractLinks : Выделяет все ссылки из HTML-документа, учитывая baseURL.
 func (p *Parser) ExtractLinks(htmlContent, baseURL string) ([]string, error) {
 	doc, err := html.Parse(strings.NewReader(htmlContent))
 	if err != nil {

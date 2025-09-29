@@ -6,6 +6,7 @@ import (
 	"syscall"
 )
 
+// Kill : Функция завершает процесс по его ID
 func Kill(PID string) error {
 	pid, pidConvErr := strconv.Atoi(PID)
 	if pidConvErr != nil {

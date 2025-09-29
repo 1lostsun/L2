@@ -5,6 +5,7 @@ import (
 	"os/exec"
 )
 
+// Ps : Функция выводит список запущенных процессов
 func Ps(args []string) error {
 	out, err := exec.Command("ps", args...).CombinedOutput()
 	if err != nil {
